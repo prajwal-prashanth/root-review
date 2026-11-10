@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Root Crosswords</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1>Root Crosswords</h1>
+    <p class="subtitle">Clues are meanings. Answers are roots and prefixes, slashes included.</p>
+  </header>
+
+  <section class="signin" id="signin">
+    <form id="name-form" class="name-form">
+      <label for="name">Enter your first and last name to get your crossword.</label>
+      <div class="name-row">
+        <input id="name" type="text" autocomplete="name" spellcheck="false" required>
+        <button type="submit">Start</button>
+      </div>
+      <p class="note">Use your real name, spelled the same way each time.</p>
+    </form>
+  </section>
+
+  <p class="puzzle-label" id="puzzle-label" hidden></p>
+
+  <main class="puzzle" id="puzzle" hidden>
+    <section class="board">
+      <div class="current-clue" id="current-clue" aria-live="polite"></div>
+      <div class="grid-wrap">
+        <div class="grid" id="grid" role="grid" aria-label="Crossword grid"></div>
+      </div>
+      <input id="entry" class="entry" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" aria-label="Type answer">
+      <div class="board-footer">
+        <p class="hint">Hint: once filled in, look at the circled squares. Which letter appears most? Work together; the crossword number matters.</p>
+        <button type="button" class="clear" id="clear">Clear</button>
+      </div>
+    </section>
+
+    <section class="clues">
+      <div class="clue-list">
+        <h2>Across</h2>
+        <ol id="across"></ol>
+      </div>
+      <div class="clue-list">
+        <h2>Down</h2>
+        <ol id="down"></ol>
+      </div>
+    </section>
+  </main>
+
+  <script src="puzzles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
